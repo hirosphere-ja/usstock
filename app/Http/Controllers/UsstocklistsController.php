@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Usstocklist;
+
 class UsstocklistsController extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class UsstocklistsController extends Controller
      */
     public function index()
     {
-        //
+        $usstocklists = Usstocklist::all();
+        return $usstocklists;
     }
 
     /**
