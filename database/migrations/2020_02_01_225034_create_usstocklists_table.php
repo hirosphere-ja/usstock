@@ -14,8 +14,9 @@ class CreateUsstocklistsTable extends Migration
     public function up()
     {
         Schema::create('usstocklists', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->string('ticker')->unique()->primarykey();
+            $table->string('stockname')->unique();
+            $table->integer('market_id');
         });
     }
 
