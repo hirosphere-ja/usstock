@@ -47,9 +47,10 @@ class UsstocklistsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($ticker)
     {
-        //
+        $usstocklists = Usstocklist::find($ticker);
+        return view('usstocklists.show', ['usstocklist' => $usstocklists]);
     }
 
     /**
