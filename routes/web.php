@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('usstocklist', 'UsstocklistsController');
+Route::get('/usstocklist', 'UsstocklistsController@index');
+Route::post('/usstocklist', 'UsstocklistsController@store');
+Route::get('/usstocklist/create', 'UsstocklistsController@create');
+Route::get('/usstocklist/{ticker}', 'UsstocklistsController@show');
+Route::put('/usstocklist/{ticker}', 'UsstocklistsController@update');
+Route::delete('/usstocklist/{ticker}', 'UsstocklistsController@destroy');
+Route::get('/usstocklist/{ticker}/edit', 'UsstocklistsController@edit');
