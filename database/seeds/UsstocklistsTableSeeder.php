@@ -11,7 +11,7 @@ class UsstocklistsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Usstockmarkets')->insert([
+        DB::table('Usstocklists')->insert([
             [
                 'ticker' => 'ibm',
                 'stockname' => 'IBM',
