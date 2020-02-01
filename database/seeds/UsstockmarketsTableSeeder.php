@@ -11,7 +11,7 @@ class UsstockmarketsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB：table('Usstockmarkets')->insert([
+        DB::table('Usstockmarkets')->insert([
             [
                 'market' => 'NYSE'
             ],
