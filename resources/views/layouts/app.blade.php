@@ -12,6 +12,7 @@
   </head>
   <body>
     <h1>@yield('title')</h1>
+    @yield('content')
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
