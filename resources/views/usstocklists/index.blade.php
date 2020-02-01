@@ -14,6 +14,7 @@
     <td>{{ strtoupper($usstocklist->ticker) }}</td>
     <td>{{ $usstocklist->stockname }}</td>
     <td>{{ $usstocklist->market_id }}</td>
+    <td><a href="/usstocklists/{{ $usstocklist->ticker }}">詳細を表示</a></td>
   </tr>
   @endforeach
 </table>
