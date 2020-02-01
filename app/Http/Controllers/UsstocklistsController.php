@@ -16,7 +16,7 @@ class UsstocklistsController extends Controller
     public function index()
     {
         $usstocklists = Usstocklist::all();
-        return view('usstocklists.index');
+        return view('usstocklists.index', ['usstocklist' => $usstocklists]);
 
     }
 
