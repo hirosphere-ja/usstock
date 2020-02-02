@@ -9,7 +9,7 @@
     <th>銘柄名</th>
     <th>市場</th>
   </tr>
-  @foreach ($usstocklist as $usstocklist)
+  @foreach ($usstocklists as $usstocklist)
   <tr>
     <td>{{ strtoupper($usstocklist->ticker) }}</td>
     <td>{{ $usstocklist->stockname }}</td>
