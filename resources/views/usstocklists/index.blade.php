@@ -11,6 +11,9 @@
     <th>ティッカー</th>
     <th>銘柄名</th>
     <th>市場</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
   @foreach ($usstocklists as $usstocklist)
   <tr>
