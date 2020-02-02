@@ -12,24 +12,21 @@
     <th>銘柄名</th>
     <th>市場</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
   @foreach ($usstocklists as $usstocklist)
   <tr>
     <td>{{ strtoupper($usstocklist->ticker) }}</td>
     <td>{{ $usstocklist->stockname }}</td>
     <td>{{ $usstocklist->market_id }}</td>
-    <td><a href="/usstocklists/{{ $usstocklist->ticker }}" class="btn btn-primary btn-sm">詳細</a></td>
-    <td><a href="/usstocklists/{{ $usstocklist->ticker }}/edit" class="btn btn-primary btn-sm">編集</a></td>
     <td>
-      <form action="/usstocklists/{{$usstocklist->ticker}}" method="post">
+      <a href="/usstocklists/{{ $usstocklist->ticker }}" class="btn btn-primary btn-sm d-inline-block">詳細</a>
+      <a href="/usstocklists/{{ $usstocklist->ticker }}/edit" class="btn btn-primary btn-sm d-inline-block">編集</a>
+      <form action="/usstocklists/{{$usstocklist->ticker}}" method="post" class="d-inline-block">
         @csrf
         <input type="hidden" name="_method" value="delete">
         <input type="submit" value="削除" class="btn btn-danger btn-sm btn-dell">
       </form>
-    </td>
-  </tr>
+    </td>  </tr>
   @endforeach
 </table>
 @endsection

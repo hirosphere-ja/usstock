@@ -15,13 +15,13 @@
     <td>{{ $usstocklist->market_id }}</td>
   </tr>
 </table>
-<a href="/usstocklists/{{ $usstocklist->ticker }}/edit" class="btn btn-primary btn-sm">編集</a>
-<form action="/usstocklists/{{$usstocklist->ticker}}" method="post">
+<a href="/usstocklists/{{ $usstocklist->ticker }}/edit" class="btn btn-primary btn-sm d-inline-block">編集</a>
+<form action="/usstocklists/{{$usstocklist->ticker}}" method="post" class="d-inline-block">
   @csrf
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="削除" class="btn btn-danger btn-sm btn-dell">
-</form><br>
-<a href="/usstocklists" class="btn btn-success btn-sm">一覧に戻る</a>
+</form>
+<a href="/usstocklists" class="btn btn-success btn-sm d-inline-block">一覧に戻る</a>
 @endsection
 @section('script')
 <script>
