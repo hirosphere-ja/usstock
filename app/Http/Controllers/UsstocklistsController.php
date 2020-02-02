@@ -67,9 +67,10 @@ class UsstocklistsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($ticker)
     {
-        //
+        $usstocklist = Usstocklist::find($ticker);
+        return view('usstocklists.edit', ['usstocklist' => $usstocklist]);
     }
 
     /**
@@ -79,9 +80,17 @@ class UsstocklistsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $ticker)
     {
-        //
+        $usstocklist = Usstocklist::find($ticker);
+
+        $usstocklist->ticker = $request->ticker;
+        $usstocklist->stockname = $request->stockname;
+        $usstocklist->market_id = $request->market_id;
+
+        $usstocklist->save();
+
+        return redirect('/usstocklists/'.$ticker);
     }
 
     /**
