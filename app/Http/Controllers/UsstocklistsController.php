@@ -16,7 +16,7 @@ class UsstocklistsController extends Controller
     public function index()
     {
         $usstocklists = Usstocklist::all();
-        return view('usstocklists.index', ['usstocklist' => $usstocklists]);
+        return view('usstocklists.index', ['usstocklists' => $usstocklists]);
 
     }
 
@@ -49,8 +49,8 @@ class UsstocklistsController extends Controller
      */
     public function show($ticker)
     {
-        $usstocklists = Usstocklist::find($ticker);
-        return view('usstocklists.show', ['usstocklist' => $usstocklists]);
+        $usstocklist = Usstocklist::find($ticker);
+        return view('usstocklists.show', ['usstocklist' => $usstocklist]);
     }
 
     /**
