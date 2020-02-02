@@ -16,5 +16,10 @@
   </tr>
 </table>
 <a href="/usstocklists/{{ $usstocklist->ticker }}/edit">編集する</a><br>
+<form action="/usstocklists/{{$usstocklist->ticker}}" method="post">
+  @csrf
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="削除する">
+</form><br>
 <a href="/usstocklists">一覧に戻る</a>
 @endsection
