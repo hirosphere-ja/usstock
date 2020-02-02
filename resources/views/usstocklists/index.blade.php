@@ -4,7 +4,7 @@
 
 @section('content')
 <div>
-  <a href="/usstocklists/create">新規作成</a>
+  <a href="/usstocklists/create" class="btn btn-primary btn-sm">新規作成</a>
 </div>
 <table class="table">
   <tr>
