@@ -15,5 +15,6 @@
     <td>{{ $usstocklist->market_id }}</td>
   </tr>
 </table>
+<a href="/usstocklists/{{ $usstocklist->ticker }}/edit">編集する</a><br>
 <a href="/usstocklists">一覧に戻る</a>
 @endsection
