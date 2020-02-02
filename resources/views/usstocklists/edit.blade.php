@@ -22,7 +22,7 @@
     </div>
     <div>
       <input type="hidden" name="_method" value="patch">
-      <input type="submit" value="送信">
+      <input type="submit" value="送信" class="btn btn-primary btn-sm">
     </div>
   </form>
 @endsection

@@ -15,11 +15,11 @@
     <td>{{ $usstocklist->market_id }}</td>
   </tr>
 </table>
-<a href="/usstocklists/{{ $usstocklist->ticker }}/edit">編集する</a><br>
+<a href="/usstocklists/{{ $usstocklist->ticker }}/edit" class="btn btn-primary btn-sm">編集</a>
 <form action="/usstocklists/{{$usstocklist->ticker}}" method="post">
   @csrf
   <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="削除する">
+  <input type="submit" value="削除" class="btn btn-danger btn-sm">
 </form><br>
-<a href="/usstocklists">一覧に戻る</a>
+<a href="/usstocklists" class="btn btn-success btn-sm">一覧に戻る</a>
 @endsection
