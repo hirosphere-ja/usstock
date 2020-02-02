@@ -12,7 +12,7 @@
   <tr>
     <td>{{ strtoupper($usstocklist->ticker) }}</td>
     <td>{{ $usstocklist->stockname }}</td>
-    <td>{{ $usstocklist->market_id }}</td>
+    <td>{{ $usstocklist->usstockmarket->market }}</td>
   </tr>
 </table>
 <a href="/usstocklists/{{ $usstocklist->ticker }}/edit" class="btn btn-primary btn-sm d-inline-block">編集</a>
