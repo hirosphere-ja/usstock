@@ -18,6 +18,7 @@
     <td>{{ $usstocklist->stockname }}</td>
     <td>{{ $usstocklist->market_id }}</td>
     <td><a href="/usstocklists/{{ $usstocklist->ticker }}">詳細を表示</a></td>
+    <td><a href="/usstocklists/{{ $usstocklist->ticker }}/edit">編集する</a></td>
   </tr>
   @endforeach
 </table>
