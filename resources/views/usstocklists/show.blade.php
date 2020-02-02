@@ -19,7 +19,20 @@
 <form action="/usstocklists/{{$usstocklist->ticker}}" method="post">
   @csrf
   <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="削除" class="btn btn-danger btn-sm">
+  <input type="submit" value="削除" class="btn btn-danger btn-sm btn-dell">
 </form><br>
 <a href="/usstocklists" class="btn btn-success btn-sm">一覧に戻る</a>
+@endsection
+@section('script')
+<script>
+  $(function(){
+    $(".btn-dell").click(function(){
+      if(confirm("本当に削除しますか？")){
+      // そのまま削除
+      }else{
+        return false;
+      }
+    });
+  });
+</script>
 @endsection
