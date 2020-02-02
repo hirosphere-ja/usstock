@@ -27,7 +27,7 @@ class UsstocklistsController extends Controller
      */
     public function create()
     {
-        //
+        return view('usstocklists.create');
     }
 
     /**
@@ -38,7 +38,15 @@ class UsstocklistsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usstocklist = new Usstocklist;
+
+        $usstocklist->ticker = $request->ticker;
+        $usstocklist->stockname = $request->stockname;
+        $usstocklist->market_id = $request->market_id;
+
+        $usstocklist->save();
+
+        return redirect('/usstocklists');
     }
 
     /**
