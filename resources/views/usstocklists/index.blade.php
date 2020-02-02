@@ -3,6 +3,9 @@
 @section('title', '銘柄一覧')
 
 @section('content')
+<div>
+  <a href="/usstocklists/create">新規作成</a>
+</div>
 <table class="table">
   <tr>
     <th>ティッカー</th>
