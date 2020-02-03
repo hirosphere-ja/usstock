@@ -26,6 +26,16 @@ class UsstocklistsTableSeeder extends Seeder
                 'ticker' => 'pbi',
                 'stockname' => 'ピツニーボウズ',
                 'market_id' => '1',
+            ],
+            [
+                'ticker' => 'cva',
+                'stockname' => 'コバンタ・ホールティング',
+                'market_id' => '1',
+            ],
+            [
+                'ticker' => 'mdp',
+                'stockname' => 'メレディス',
+                'market_id' => '1',
             ]
         ]);
     }
