@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UsstockmarketsTableSeeder::class);
         $this->call(UsstocklistsTableSeeder::class);
+        $this->call(UsstockdividendsTableSeeder::class);
     }
 }
