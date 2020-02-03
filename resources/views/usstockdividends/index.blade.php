@@ -21,7 +21,7 @@
     <td>{{ date('Y/m/d',strtotime($usstockdividend->announceday)) }}</td>
     <td>{{ date('Y/m/d',strtotime($usstockdividend->exrights)) }}</td>
     <td>{{ date('Y/m/d',strtotime($usstockdividend->paymentday)) }}</td>
-    <td>{{ money_format("%.6n",$usstockdividend->dividend) }}USD</td>
+    <td>{{ money_format("%.6n",$usstockdividend->dividend) }} USD</td>
     <td>
       <a href="/usstockdividends/{{ $usstockdividend->id }}" class="btn btn-primary btn-sm d-inline-block">詳細</a>
       <a href="/usstockdividends/{{ $usstockdividend->id }}/edit" class="btn btn-primary btn-sm d-inline-block">編集</a>
