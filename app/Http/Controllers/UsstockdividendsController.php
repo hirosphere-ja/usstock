@@ -58,7 +58,8 @@ class UsstockdividendsController extends Controller
      */
     public function show($id)
     {
-        //
+        $usstockdividend = Usstockdividend::find($id);
+        return view('usstockdividends.show', ['usstockdividend' => $usstockdividend]);
     }
 
     /**
