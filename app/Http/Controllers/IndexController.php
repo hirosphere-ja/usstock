@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Usstockdividend;
+use App\Usstocklist;
 
 class IndexController extends Controller
 {
@@ -24,6 +25,16 @@ class IndexController extends Controller
         }
 
         $usstockdividends = $query->orderBy('announceday','desc')->paginate(100);
-        return view('show')->with('usstockdividends',$usstockdividends)->with('ticker',$ticker);
+        $usstocklist = Usstocklist::find($ticker);
+        return view('show')->with('usstockdividends',$usstockdividends)->with('usstocklist',$usstocklist)->with('ticker',$ticker);
+    }
+
+    public function destroy($id)
+    {
+        $usstockdividend = Usstockdividend::find($id);
+
+        $usstockdividend->delete();
+
+        return redirect('/');
     }
 }
