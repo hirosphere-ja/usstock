@@ -26,7 +26,7 @@ class UsstockdividendsController extends Controller
      */
     public function create()
     {
-        //
+        return view('usstockdividends.create');
     }
 
     /**
@@ -37,7 +37,17 @@ class UsstockdividendsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usstockdividend = new Usstockdividend;
+
+        $usstockdividend->ticker = $request->ticker;
+        $usstockdividend->announceday = $request->announceday;
+        $usstockdividend->exrights = $request->exrights;
+        $usstockdividend->paymentday = $request->paymentday;
+        $usstockdividend->dividend = $request->dividend;
+
+        $usstockdividend->save();
+
+        return redirect('/usstockdividends');
     }
 
     /**
