@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'IndexController@index');
+Route::get('/show', 'IndexController@show');
 
 Route::resource('usstocklists', 'UsstocklistsController');
 Route::get('/usstocklists', 'UsstocklistsController@index');
