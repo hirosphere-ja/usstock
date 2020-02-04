@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'IndexController@index');
 
 Route::resource('usstocklists', 'UsstocklistsController');
 Route::get('/usstocklists', 'UsstocklistsController@index');
