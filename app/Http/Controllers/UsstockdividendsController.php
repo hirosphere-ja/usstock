@@ -104,6 +104,10 @@ class UsstockdividendsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $usstockdividend = Usstockdividend::find($id);
+
+        $usstockdividend->delete();
+
+        return redirect('/usstockdividends');
     }
 }
