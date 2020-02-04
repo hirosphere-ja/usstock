@@ -70,7 +70,8 @@ class UsstockdividendsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $usstockdividend = Usstockdividend::find($id);
+        return view('usstockdividends.edit', ['usstockdividend' => $usstockdividend]);
     }
 
     /**
@@ -82,7 +83,17 @@ class UsstockdividendsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $usstockdividend = Usstockdividend::find($id);
+
+        $usstockdividend->ticker = $request->ticker;
+        $usstockdividend->announceday = $request->announceday;
+        $usstockdividend->exrights = $request->exrights;
+        $usstockdividend->paymentday = $request->paymentday;
+        $usstockdividend->dividend = $request->dividend;
+
+        $usstockdividend->save();
+
+        return redirect('/usstockdividends/'.$id);
     }
 
     /**
