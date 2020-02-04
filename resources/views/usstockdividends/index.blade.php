@@ -4,7 +4,8 @@
 
 @section('content')
 <div>
-  <a href="/usstockdividends/create" class="btn btn-primary btn-sm">新規作成</a>
+  <a href="/usstockdividends/create" class="btn btn-primary">新規作成</a>
+  <a href="/" class="btn btn-success">TOPへ戻る</a>
 </div>
 <table class="table">
   <tr>
