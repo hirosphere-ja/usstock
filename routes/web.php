@@ -28,3 +28,7 @@ Route::resource('usstockdividends', 'UsstockdividendsController');
 Route::get('/usstockdividends', 'UsstockdividendsController@index');
 Route::post('/usstockdividends', 'UsstockdividendsController@store');
 Route::get('/usstockdividends/create', 'UsstockdividendsController@create');
+Route::get('/usstockdividends/{ticker}', 'UsstockdividendsController@show');
+Route::post('/usstockdividends/{ticker}', 'UsstockdividendsController@update');
+Route::delete('/usstocklists/{ticker}', 'UsstocklistsController@destroy');
+Route::get('/usstocklists/{ticker}/edit', 'UsstocklistsController@edit');
