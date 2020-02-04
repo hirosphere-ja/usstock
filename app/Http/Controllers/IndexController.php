@@ -23,7 +23,7 @@ class IndexController extends Controller
             $query->where('ticker',$ticker);
         }
 
-        $usstockdividends = $query->orderBy('announceday','desc')->paginate(2);
+        $usstockdividends = $query->orderBy('announceday','desc')->paginate(100);
         return view('show')->with('usstockdividends',$usstockdividends)->with('ticker',$ticker);
     }
 }
