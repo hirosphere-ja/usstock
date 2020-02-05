@@ -15,8 +15,7 @@ class UsstockdividendsController extends Controller
      */
     public function index()
     {
-        // ここでは並べ替えにorderByは使えないので、sortByを使う
-        $usstockdividends = Usstockdividend::all()->sortBy('announceday');
+        $usstockdividends = Usstockdividend::orderBy('announceday','desc')->get();
         return view('usstockdividends.index', ['usstockdividends' => $usstockdividends]);
     }
 
