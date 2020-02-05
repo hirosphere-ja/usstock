@@ -11,8 +11,12 @@
   @csrf
   <div>
     <label for="ticker">ティッカー</label>
-    <input type="text" name="ticker">
+    <select name="ticker">
+      @foreach ($usstocklists as $usstocklists)
+        <option value="{{ $usstocklists->ticker }}">{{ strtoupper($usstocklists->ticker) }}</option>
+      @endforeach
+    </select>
+    <input type="submit" value="ティッカー検索" class="btn btn-primary">
   </div>
-  <input type="submit" value="検索">
 </form>
 @endsection
