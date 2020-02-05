@@ -7,8 +7,12 @@
     @csrf
     <div>
       <label for="ticker">ティッカー</label>
-      <input type="text" name="ticker">
-    </div>
+      <select name="ticker">
+        @foreach ($usstocklists as $usstocklist)
+          <option value="{{ $usstocklist->ticker }}">{{ strtoupper($usstocklist->ticker) }}</option>
+        @endforeach
+      </select>
+      </div>
     <div>
       <label for="announceday">発表日</label>
       <input type="text" name="announceday" size="50">
