@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Usstocklist;
 use App\Usstockdividend;
 
 class UsstockdividendsController extends Controller
@@ -26,7 +27,8 @@ class UsstockdividendsController extends Controller
      */
     public function create()
     {
-        return view('usstockdividends.create');
+        $usstocklists = Usstocklist::orderBy('ticker','desc')->get();;
+        return view('usstockdividends.create', ['usstocklists' => $usstocklists]);
     }
 
     /**
