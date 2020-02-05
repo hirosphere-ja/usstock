@@ -15,7 +15,7 @@ class UsstocklistsController extends Controller
      */
     public function index()
     {
-        $usstocklists = Usstocklist::with('usstockmarket')->get();
+        $usstocklists = Usstocklist::with('usstockmarket')->orderBy('ticker','asc')->get();
         return view('usstocklists.index', ['usstocklists' => $usstocklists]);
 
     }
