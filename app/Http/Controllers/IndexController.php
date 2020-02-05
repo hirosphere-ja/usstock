@@ -10,7 +10,8 @@ use App\Usstocklist;
 class IndexController extends Controller
 {
     public function index(){
-        return view('index');
+        $usstocklists = Usstocklist::all();
+        return view('index', ['usstocklists' => $usstocklists]);
     }
 
     public function show(Request $request){
