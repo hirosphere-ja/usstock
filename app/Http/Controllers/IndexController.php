@@ -10,7 +10,7 @@ use App\Usstocklist;
 class IndexController extends Controller
 {
     public function index(){
-        $usstocklists = Usstocklist::all();
+        $usstocklists = Usstocklist::all('ticker', 'desc');
         return view('index', ['usstocklists' => $usstocklists]);
     }
 
