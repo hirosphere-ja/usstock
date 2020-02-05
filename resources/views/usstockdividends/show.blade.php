@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '銘柄詳細')
+@section('title', '現金配当詳細')
 
 @section('content')
 <table class="table">
