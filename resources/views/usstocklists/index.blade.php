@@ -8,20 +8,20 @@
   <a href="/" class="btn btn-success">TOPへ戻る</a>
 
 </div>
-<table class="table">
+<table class="table table-bordered">
   <tr>
-    <th>ティッカー</th>
-    <th>銘柄名</th>
-    <th>市場</th>
-    <th></th>
+    <th style="width:10%" class="text-center">ティッカー</th>
+    <th style="width:68%" class="text-center">銘柄名</th>
+    <th style="width:10%" class="text-center">市場</th>
+    <th style="width:12%" class="text-center"></th>
   </tr>
   @foreach ($usstocklists as $usstocklist)
   <tr>
-    <td>{{ strtoupper($usstocklist->ticker) }}</td>
-    <td>{{ $usstocklist->stockname }}</td>
-    <td>{{ $usstocklist->usstockmarket->market }}</td>
-    <td>
-      <a href="/usstocklists/{{ $usstocklist->ticker }}" class="btn btn-primary btn-sm d-inline-block">詳細</a>
+    <td class="text-center">{{ strtoupper($usstocklist->ticker) }}</td>
+    <td class="text-center">{{ $usstocklist->stockname }}</td>
+    <td class="text-center">{{ $usstocklist->usstockmarket->market }}</td>
+    <td class="text-center">
+      {{-- <a href="/usstocklists/{{ $usstocklist->ticker }}" class="btn btn-primary btn-sm d-inline-block">詳細</a> --}}
       <a href="/usstocklists/{{ $usstocklist->ticker }}/edit" class="btn btn-primary btn-sm d-inline-block">編集</a>
       <form action="/usstocklists/{{$usstocklist->ticker}}" method="post" class="d-inline-block">
         @csrf
