@@ -5,6 +5,7 @@
 @section('content')
 <form action="/usstockdividends/{{ $usstockdividend->id }}" method="post">
     @csrf
+    @method('patch')
     <div>
       <label for="ticker">ティッカー</label>
       <input type="text" name="ticker" value="{{ $usstockdividend->ticker }}">
@@ -26,7 +27,6 @@
       <input type="text" name="dividend" size="50" value="{{ $usstockdividend->dividend }}">
     </div>
     <div>
-      <input type="hidden" name="_method" value="patch">
       <input type="submit" value="送信" class="btn btn-primary btn-sm">
     </div>
   </form>

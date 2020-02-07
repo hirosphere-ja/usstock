@@ -5,6 +5,7 @@
 @section('content')
 <form action="/usstocklists/{{ $usstocklist->ticker }}" method="post">
     @csrf
+    @method('patch')
     <div>
       <label for="ticker">ティッカー</label>
       <input type="text" name="ticker" value="{{ $usstocklist->ticker }}">
@@ -21,7 +22,6 @@
       </select>
     </div>
     <div>
-      <input type="hidden" name="_method" value="patch">
       <input type="submit" value="送信" class="btn btn-primary btn-sm">
     </div>
   </form>
