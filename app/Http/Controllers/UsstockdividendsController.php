@@ -27,7 +27,7 @@ class UsstockdividendsController extends Controller
      */
     public function create()
     {
-        $usstocklists = Usstocklist::orderBy('ticker','desc')->get();;
+        $usstocklists = Usstocklist::orderBy('ticker','desc')->get();
         return view('usstockdividends.create', ['usstocklists' => $usstocklists]);
     }
 
@@ -73,7 +73,8 @@ class UsstockdividendsController extends Controller
     public function edit($id)
     {
         $usstockdividend = Usstockdividend::find($id);
-        return view('usstockdividends.edit', ['usstockdividend' => $usstockdividend]);
+        $usstocklists = Usstocklist::all();
+        return view('usstockdividends.edit', ['usstockdividend' => $usstockdividend])->with('usstocklists',$usstocklists);
     }
 
     /**
