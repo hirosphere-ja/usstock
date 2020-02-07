@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Usstocklist;
+use App\Usstockmarket;
 
 class UsstocklistsController extends Controller
 {
@@ -70,7 +71,8 @@ class UsstocklistsController extends Controller
     public function edit($ticker)
     {
         $usstocklist = Usstocklist::find($ticker);
-        return view('usstocklists.edit', ['usstocklist' => $usstocklist]);
+        $usstockmarkets = Usstockmarket::all();
+        return view('usstocklists.edit', ['usstocklist' => $usstocklist])->with('usstockmarkets',$usstockmarkets);
     }
 
     /**
