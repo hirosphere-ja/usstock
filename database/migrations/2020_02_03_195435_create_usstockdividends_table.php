@@ -16,9 +16,9 @@ class CreateUsstockdividendsTable extends Migration
         Schema::create('usstockdividends', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('ticker');
-            $table->date('announceday');     // 発表日
-            $table->date('exrights');        // 権利落日
-            $table->date('paymentday');      // 支払日
+            $table->string('announceday');     // 発表日
+            $table->string('exrights');        // 権利落日
+            $table->string('paymentday');      // 支払日
             $table->decimal('dividend',7,6); // 配当内容
         });
     }
