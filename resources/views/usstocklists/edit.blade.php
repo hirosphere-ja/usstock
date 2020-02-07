@@ -17,8 +17,9 @@
     <div>
       <label for="market_id">銘柄名</label>
       <select name="market_id">
-        <option value="1">NYSE</option>
-        <option value="2">NASDAQ</option>
+        @foreach ($usstockmarkets as $market)
+          <option value="{{ $usstocklist->market_id }}" @if($usstocklist->market_id === $market->market_id) selected @endif>{{ $market->market }}</option>
+        @endforeach
       </select>
     </div>
     <div>
