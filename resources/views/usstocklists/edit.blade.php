@@ -8,11 +8,11 @@
     @method('patch')
     <div>
       <label for="ticker">ティッカー</label>
-      <input type="text" name="ticker" value="{{ $usstocklist->ticker }}">
+      <input type="text" name="ticker" value="{{ $usstocklist->ticker }}" required>
     </div>
     <div>
       <label for="ticker">銘柄名</label>
-      <input type="text" name="stockname" size="50" value="{{ $usstocklist->stockname }}">
+      <input type="text" name="stockname" size="50" value="{{ $usstocklist->stockname }}" required>
     </div>
     <div>
       <label for="market_id">銘柄名</label>
@@ -23,7 +23,7 @@
       </select>
     </div>
     <div>
-      <input type="submit" value="送信" class="btn btn-primary btn-sm">
+      <input type="submit" value="変更する" class="btn btn-primary btn-sm">
     </div>
   </form>
 @endsection

@@ -7,11 +7,11 @@
     @csrf
     <div>
       <label for="ticker">ティッカー</label>
-      <input type="text" name="ticker">
+      <input type="text" name="ticker" required>
     </div>
     <div>
       <label for="ticker">銘柄名</label>
-      <input type="text" name="stockname" size="50">
+      <input type="text" name="stockname" size="50" required>
     </div>
     <div>
       <label for="market_id">銘柄名</label>
@@ -21,7 +21,7 @@
       </select>
     </div>
     <div>
-      <input type="submit" value="送信">
+      <input type="submit" value="登録する" class="btn btn-primary btn-sm">
     </div>
   </form>
 @endsection
