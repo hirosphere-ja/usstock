@@ -8,7 +8,11 @@
     @method('patch')
     <div>
       <label for="ticker">ティッカー</label>
-      <input type="text" name="ticker" value="{{ $usstockdividend->ticker }}">
+      <select name="ticker">
+        @foreach ($usstocklists as $usstocklist)
+          <option value="{{ $usstocklist->ticker }}" @if($usstocklist->ticker === $usstockdividend->ticker) selected @endif>{{ strtoupper($usstocklist->ticker) }}</option>
+        @endforeach
+      </select>
     </div>
     <div>
       <label for="announceday">発表日</label>
