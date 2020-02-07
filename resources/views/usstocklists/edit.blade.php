@@ -15,7 +15,7 @@
       <input type="text" name="stockname" size="50" value="{{ $usstocklist->stockname }}" required>
     </div>
     <div>
-      <label for="market_id">銘柄名</label>
+      <label for="market_id">市場</label>
       <select name="market_id">
         @foreach ($usstockmarkets as $market)
           <option value="{{ $usstocklist->market_id }}" @if($usstocklist->market_id === $market->market_id) selected @endif>{{ $market->market }}</option>
