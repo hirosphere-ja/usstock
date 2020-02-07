@@ -16,22 +16,22 @@
     </div>
     <div>
       <label for="announceday">発表日</label>
-      <input type="text" name="announceday" size="50" value="{{ $usstockdividend->announceday }}">
+      <input type="date" name="announceday" size="50" value="{{ $usstockdividend->announceday }}" required>
     </div>
     <div>
       <label for="exrights">権利落日</label>
-      <input type="text" name="exrights" size="50" value="{{ $usstockdividend->exrights }}">
+      <input type="date" name="exrights" size="50" value="{{ $usstockdividend->exrights }}" required>
     </div>
     <div>
       <label for="paymentday">支払日</label>
-      <input type="text" name="paymentday" size="50" value="{{ $usstockdividend->paymentday }}">
+      <input type="date" name="paymentday" size="50" value="{{ $usstockdividend->paymentday }}" required>
     </div>
     <div>
       <label for="dividend">配当内容</label>
-      <input type="text" name="dividend" size="50" value="{{ $usstockdividend->dividend }}">
+      <input type="text" name="dividend" size="50" value="{{ $usstockdividend->dividend }}" required>
     </div>
     <div>
-      <input type="submit" value="送信" class="btn btn-primary btn-sm">
+      <input type="submit" value="更新する" class="btn btn-primary btn-sm">
     </div>
   </form>
 @endsection
