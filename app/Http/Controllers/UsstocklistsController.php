@@ -44,12 +44,15 @@ class UsstocklistsController extends Controller
         $requests = $request->all();
 
         $rules = [
-            'ticker' => 'unique:usstocklists',
-            'stockname' => 'unique:usstocklists',
+            'ticker' => 'required|unique:usstocklists',
+            'stockname' => 'required|unique:usstocklists',
         ];
 
         $messages = [
+            'ticker.required' => 'ティッカーを入力してください。',
             'ticker.unique' => 'ティッカーが重複しています。',
+
+            'stockname.required' => '銘柄名を入力してください。',
             'stockname.unique' => '銘柄名が重複しています。',
         ];
 
