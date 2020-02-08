@@ -8,28 +8,33 @@
   <a href="/" class="btn btn-success">TOPへ戻る</a>
 
 </div>
-<table class="table table-bordered">
-  <tr>
-    <th style="width:10%" class="text-center">ティッカー</th>
-    <th style="width:68%" class="text-center">銘柄名</th>
-    <th style="width:10%" class="text-center">市場</th>
-    <th style="width:12%" class="text-center"></th>
-  </tr>
-  @foreach ($usstocklists as $usstocklist)
-  <tr>
-    <td class="text-center">{{ strtoupper($usstocklist->ticker) }}</td>
-    <td class="text-center">{{ $usstocklist->stockname }}</td>
-    <td class="text-center">{{ $usstocklist->usstockmarket->market }}</td>
-    <td class="text-center">
-      {{-- <a href="/usstocklists/{{ $usstocklist->ticker }}" class="btn btn-primary btn-sm d-inline-block">詳細</a> --}}
-      <a href="/usstocklists/{{ $usstocklist->ticker }}/edit" class="btn btn-primary btn-sm d-inline-block">編集</a>
-      <form action="/usstocklists/{{$usstocklist->ticker}}" method="post" class="d-inline-block">
-        @csrf
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="削除" class="btn btn-danger btn-sm btn-dell">
-      </form>
-    </td>  </tr>
-  @endforeach
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th style="width:10%" class="text-center">ティッカー</th>
+      <th style="width:68%" class="text-center">銘柄名</th>
+      <th style="width:10%" class="text-center">市場</th>
+      <th style="width:12%" class="text-center"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach ($usstocklists as $usstocklist)
+    <tr>
+      <td class="text-center">{{ strtoupper($usstocklist->ticker) }}</td>
+      <td class="text-center">{{ $usstocklist->stockname }}</td>
+      <td class="text-center">{{ $usstocklist->usstockmarket->market }}</td>
+      <td class="text-center">
+        {{-- <a href="/usstocklists/{{ $usstocklist->ticker }}" class="btn btn-primary btn-sm d-inline-block">詳細</a> --}}
+        <a href="/usstocklists/{{ $usstocklist->ticker }}/edit" class="btn btn-primary btn-sm d-inline-block">編集</a>
+        <form action="/usstocklists/{{$usstocklist->ticker}}" method="post" class="d-inline-block">
+          @csrf
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="削除" class="btn btn-danger btn-sm btn-dell">
+        </form>
+      </td>
+    </tr>
+    @endforeach
+  </tbody>
 </table>
 @endsection
 @section('script')
