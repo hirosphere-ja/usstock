@@ -31,7 +31,8 @@
       <input type="text" name="dividend" size="50" value="{{ $usstockdividend->dividend }}" required>
     </div>
     <div>
-      <input type="submit" value="更新する" class="btn btn-primary btn-sm">
+      <input type="submit" value="更新する" class="btn btn-primary">
+      <a href="/usstockdividends" class="btn btn-success d-inline-block">一覧に戻る</a>
     </div>
   </form>
 @endsection

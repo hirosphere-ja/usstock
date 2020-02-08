@@ -14,8 +14,8 @@
       <th style="width:20%" class="text-center">発表日</th>
       <th style="width:20%" class="text-center">権利落日</th>
       <th style="width:20%" class="text-center">支払日</th>
-      <th style="width:18%" class="text-center">配当内容</th>
-      <th style="width:12%" class="text-center"></th>
+      <th style="width:15%" class="text-center">配当内容</th>
+      <th style="width:15%" class="text-center"></th>
     </tr>
   </thead>
   <tbody>
@@ -28,11 +28,11 @@
       <td class="text-center">{{ money_format("%.6n",$usstockdividend->dividend) }} USD</td>
       <td class="text-center">
         {{-- <a href="/usstockdividends/{{ $usstockdividend->id }}" class="btn btn-primary btn-sm d-inline-block">詳細</a> --}}
-        <a href="/usstockdividends/{{ $usstockdividend->id }}/edit" class="btn btn-primary btn-sm d-inline-block">編集</a>
+        <a href="/usstockdividends/{{ $usstockdividend->id }}/edit" class="btn btn-primary d-inline-block">編集</a>
         <form action="/usstockdividends/{{$usstockdividend->id}}" method="post" class="d-inline-block">
           @csrf
           <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="削除" class="btn btn-danger btn-sm btn-dell">
+          <input type="submit" value="削除" class="btn btn-danger btn-dell">
         </form>
       </td>
     </tr>

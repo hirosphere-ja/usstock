@@ -27,10 +27,11 @@
     </div>
     <div>
       <label for="dividend">配当内容</label>
-      <input type="text" name="dividend" size="50" required>
+      <input type="text" name="dividend" size="4" required>
     </div>
     <div>
-      <input type="submit" value="登録する" class="btn btn-primary btn-sm">
+      <input type="submit" value="登録する" class="btn btn-primary">
+      <a href="/usstockdividends" class="btn btn-success d-inline-block">一覧に戻る</a>
     </div>
   </form>
 @endsection
