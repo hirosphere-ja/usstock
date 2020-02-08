@@ -18,7 +18,7 @@
       <label for="market_id">市場</label>
       <select name="market_id">
         @foreach ($usstockmarkets as $market)
-          <option value="{{ $usstocklist->market_id }}" @if($usstocklist->market_id === $market->market_id) selected @endif>{{ $market->market }}</option>
+          <option value="{{ $market->market_id }}" @if($usstocklist->market_id === $market->market_id) selected @endif>{{ $market->market }}</option>
         @endforeach
       </select>
     </div>
