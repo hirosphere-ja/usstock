@@ -39,6 +39,11 @@ class UsstocklistsController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = $request->validate([
+            'ticker' => 'unique:usstocklists',
+            'stockname' => 'unique:usstocklists',
+        ]);
+
         $usstocklist = new Usstocklist;
 
         $usstocklist->ticker = $request->ticker;
