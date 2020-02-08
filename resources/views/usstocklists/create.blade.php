@@ -3,6 +3,15 @@
 @section('title', '新規作成')
 
 @section('content')
+  @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
   <form action="/usstocklists" method="post">
     @csrf
     <div>
