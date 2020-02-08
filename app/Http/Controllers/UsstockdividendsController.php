@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use App\Usstocklist;
 use App\Usstockdividend;
@@ -39,6 +40,30 @@ class UsstockdividendsController extends Controller
      */
     public function store(Request $request)
     {
+        $requests = $request->all();
+
+        $rules = [
+            'announceday' => 'required|before:exrights',
+            'exrights' => 'required|before:paymentday',
+            'paymentday' => 'required',
+            'dividend' => 'required',
+        ];
+
+        $messages = [
+            'announceday.required' => '発表日を入力してください。',
+            'exrights.required' => '権利落日を入力してください。',
+            'announceday.before' => '権利落日は発表日より後の日付を入力してください。',
+            'paymentday.required' => '支払日を入力してください。',
+            'exrights.before' => '支払日は権利落日より後の日付を入力してください。',
+            'dividend.required' => '配当内容を入力してください。',
+        ];
+
+        $validator = Validator::make($requests,$rules,$messages);
+
+        if($validator->fails()){
+            return redirect('/usstockdividends/create')->withErrors($validator)->withInput();
+        }
+
         $usstockdividend = new Usstockdividend;
 
         $usstockdividend->ticker = $request->ticker;
