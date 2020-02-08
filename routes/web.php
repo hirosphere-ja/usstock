@@ -31,3 +31,7 @@ Route::get('/usstockdividends/{ticker}', 'UsstockdividendsController@show');
 Route::post('/usstockdividends/{ticker}', 'UsstockdividendsController@update');
 Route::delete('/usstocklists/{ticker}', 'UsstocklistsController@destroy');
 Route::get('/usstocklists/{ticker}/edit', 'UsstocklistsController@edit');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
