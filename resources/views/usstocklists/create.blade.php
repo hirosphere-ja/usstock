@@ -10,7 +10,7 @@
       <input type="text" name="ticker" required>
     </div>
     <div>
-      <label for="ticker">銘柄名</label>
+      <label for="stockname">銘柄名</label>
       <input type="text" name="stockname" size="50" required>
     </div>
     <div>
