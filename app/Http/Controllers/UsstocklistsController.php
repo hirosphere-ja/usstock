@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use App\Usstocklist;
 use App\Usstockmarket;
+
 
 class UsstocklistsController extends Controller
 {
@@ -39,10 +41,23 @@ class UsstocklistsController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = $request->validate([
+        $requests = $request->all();
+
+        $rules = [
             'ticker' => 'unique:usstocklists',
             'stockname' => 'unique:usstocklists',
-        ]);
+        ];
+
+        $messages = [
+            'ticker.unique' => 'ティッカーが重複しています。',
+            'stockname.unique' => '銘柄名が重複しています。',
+        ];
+
+        $validator = Validator::make($requests,$rules,$messages);
+
+        if($validator->fails()){
+            return redirect('/usstocklists/create')->withErrors($validator)->withInput();
+        }
 
         $usstocklist = new Usstocklist;
 
