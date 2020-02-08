@@ -4,42 +4,47 @@
 
 @section('content')
 <table class="table">
-  <tr>
-    <th>ティッカー</th>
-    <th>銘柄名</th>
-    <th>市場</th>
-  </tr>
-  <tr>
-    <td>{{ strtoupper($ticker) }}</td>
-    <td>{{ $usstocklist->stockname }}</td>
-    <td>{{ $usstocklist->usstockmarket->market }}</td>
-  </tr>
+  <thead>
+    <tr>
+      <th class="text-center">銘柄名</th>
+      <th class="text-center">ティッカー</th>
+      <th class="text-center">市場</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">{{ strtoupper($ticker) }}</td>
+      <td class="text-center">{{ $usstocklist->stockname }}</td>
+      <td class="text-center">{{ $usstocklist->usstockmarket->market }}</td>
+    </tr>
+  </tbody>
 </table>
-<table class="table">
+<table class="table table-hover">
   <tr>
-    <th>発表日</th>
-    <th>権利落日</th>
-    <th>支払日</th>
-    <th>配当内容</th>
+    <th style="width:20%" class="text-center">発表日</th>
+    <th style="width:20%" class="text-center">権利落日</th>
+    <th style="width:20%" class="text-center">支払日</th>
+    <th style="width:15%" class="text-center">配当内容</th>
+    <th style="width:15%"></th>
   </tr>
   @foreach ($usstockdividends as $usstockdividend)
     <tr>
-      <td>{{ date('Y/m/d',strtotime($usstockdividend->announceday)) }}</td>
-      <td>{{ date('Y/m/d',strtotime($usstockdividend->exrights)) }}</td>
-      <td>{{ date('Y/m/d',strtotime($usstockdividend->paymentday)) }}</td>
-      <td>{{ money_format("%.6n",$usstockdividend->dividend) }} USD</td>
+      <td class="text-center">{{ date('Y/m/d',strtotime($usstockdividend->announceday)) }}</td>
+      <td class="text-center">{{ date('Y/m/d',strtotime($usstockdividend->exrights)) }}</td>
+      <td class="text-center">{{ date('Y/m/d',strtotime($usstockdividend->paymentday)) }}</td>
+      <td class="text-center">{{ money_format("%.6n",$usstockdividend->dividend) }} USD</td>
       <td>
-        <a href="/usstockdividends/{{ $usstockdividend->id }}/edit" class="btn btn-primary btn-sm d-inline-block">編集</a>
+        <a href="/usstockdividends/{{ $usstockdividend->id }}/edit" class="btn btn-primary d-inline-block">編集</a>
         <form action="/usstockdividends/{{$usstockdividend->id}}" method="post" class="d-inline-block">
           @csrf
           <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="削除" class="btn btn-danger btn-sm btn-dell">
+          <input type="submit" value="削除" class="btn btn-danger btn-dell">
         </form>
       </td>
     </tr>
   @endforeach
 </table>
-<a href="/" class="btn btn-success btn-sm d-inline-block">TOPに戻る</a>
+<a href="/" class="btn btn-success d-inline-block">TOPに戻る</a>
 @endsection
 @section('script')
 <script>
