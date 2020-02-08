@@ -16,11 +16,11 @@
     @csrf
     <div>
       <label for="ticker">ティッカー</label>
-      <input type="text" name="ticker" required>
+      <input type="text" name="ticker" size="5">
     </div>
     <div>
       <label for="stockname">銘柄名</label>
-      <input type="text" name="stockname" size="50" required>
+      <input type="text" name="stockname" size="50">
     </div>
     <div>
       <label for="market_id">市場</label>
