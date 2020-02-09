@@ -3,15 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Usstockdividend;
 use App\Usstocklist;
 
 class IndexController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+        $user = Auth::user();
+        $sort = $request->sort;
         $usstocklists = Usstocklist::all('ticker', 'desc');
-        return view('index', ['usstocklists' => $usstocklists]);
+        $param = ['usstocklists' => $usstocklists,'sort'=>$sort,'user'=>$user];
+        return view('index', $param);
+    }
+
+    public function getLogout(){
+        Auth::logout();
+        $usstocklists = Usstocklist::all('ticker', 'desc');
+        $param = ['usstocklists' => $usstocklists];
+        return view('index', $param);
     }
 
     public function show(Request $request){
