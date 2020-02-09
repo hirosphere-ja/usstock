@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    <a href="/" class="btn btn-success">TOPへ戻る</a>
                 </div>
             </div>
         </div>
