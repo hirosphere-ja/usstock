@@ -3,10 +3,13 @@
 @section('title', '米国株式配当')
 
 @section('content')
-<div>
-  <a href="/usstocklists/" class="btn btn-primary">米国銘柄一覧管理</a>
-  <a href="/usstockdividends/" class="btn btn-primary">現金配当一覧管理</a>
-</div><br>
+@if (Auth::check())
+  <p>USER: {{ $user->name . ' (' . $user->email . ')' }}(<a href="/logout">ログアウト</a>)</p>
+  <div>
+    <a href="/usstocklists/" class="btn btn-primary">米国銘柄一覧管理</a>
+    <a href="/usstockdividends/" class="btn btn-primary">現金配当一覧管理</a>
+  </div><br>
+@endif
 <form action="show">
   @csrf
   <div>
