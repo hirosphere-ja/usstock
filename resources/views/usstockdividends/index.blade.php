@@ -28,17 +28,17 @@
       <td class="text-center">{{ date('Y/m/d',strtotime($usstockdividend->exrights)) }}</td>
       <td class="text-center">{{ date('Y/m/d',strtotime($usstockdividend->paymentday)) }}</td>
       <td class="text-center">{{ money_format("%.6n",$usstockdividend->dividend) }} USD</td>
-      <td class="text-center">
-        @if (Auth::check())
-        {{-- <a href="/usstockdividends/{{ $usstockdividend->id }}" class="btn btn-primary btn-sm d-inline-block">詳細</a> --}}
-        <a href="/usstockdividends/{{ $usstockdividend->id }}/edit" class="btn btn-primary d-inline-block">編集</a>
-        <form action="/usstockdividends/{{$usstockdividend->id}}" method="post" class="d-inline-block">
-          @csrf
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="削除" class="btn btn-danger btn-dell">
-        </form>
-        @endif
-      </td>
+      @if (Auth::check())
+        <td class="text-center">
+          {{-- <a href="/usstockdividends/{{ $usstockdividend->id }}" class="btn btn-primary btn-sm d-inline-block">詳細</a> --}}
+          <a href="/usstockdividends/{{ $usstockdividend->id }}/edit" class="btn btn-primary d-inline-block">編集</a>
+          <form action="/usstockdividends/{{$usstockdividend->id}}" method="post" class="d-inline-block">
+            @csrf
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="削除" class="btn btn-danger btn-dell">
+          </form>
+        </td>
+      @endif
     </tr>
     @endforeach
   </tbody>
