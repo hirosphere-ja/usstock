@@ -17,7 +17,7 @@ class UsstockdividendsController extends Controller
      */
     public function index()
     {
-        $usstockdividends = Usstockdividend::orderBy('announceday','desc')->get();
+        $usstockdividends = Usstockdividend::orderBy('exrights','desc')->get();
         return view('usstockdividends.index', ['usstockdividends' => $usstockdividends]);
     }
 
