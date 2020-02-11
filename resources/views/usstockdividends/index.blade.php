@@ -4,7 +4,9 @@
 
 @section('content')
 <div>
-  <a href="/usstockdividends/create" class="btn btn-primary">新規作成</a>
+  @if (Auth::check())
+    <a href="/usstockdividends/create" class="btn btn-primary">新規作成</a>
+  @endif
   <a href="/" class="btn btn-success">TOPへ戻る</a>
 </div>
 <table class="table table-bordered table-hover">
