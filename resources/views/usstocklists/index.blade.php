@@ -12,10 +12,10 @@
   <thead>
     <tr>
       <th style="width:10%" class="text-center">ティッカー</th>
-      <th style="width:63%" class="text-center">銘柄名</th>
+      <th class="text-center">銘柄名</th>
       <th style="width:10%" class="text-center">市場</th>
       @if (Auth::check())
-        <th style="width:15%" class="text-center"></th>
+        <th style="width:30%" class="text-center"></th>
       @endif
     </tr>
   </thead>

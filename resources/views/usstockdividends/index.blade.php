@@ -11,12 +11,12 @@
   <thead>
     <tr>
       <th style="width:10%" class="text-center">ティッカー</th>
-      <th style="width:20%" class="text-center">発表日</th>
-      <th style="width:20%" class="text-center">権利落日</th>
-      <th style="width:20%" class="text-center">支払日</th>
+      <th style="width:15%" class="text-center">発表日</th>
+      <th style="width:15%" class="text-center">権利落日</th>
+      <th style="width:15%" class="text-center">支払日</th>
       <th style="width:15%" class="text-center">配当内容</th>
       @if (Auth::check())
-        <th style="width:15%" class="text-center"></th>
+        <th style="width:30%" class="text-center"></th>
       @endif
     </tr>
   </thead>
