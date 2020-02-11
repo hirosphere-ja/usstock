@@ -9,6 +9,10 @@
     <a href="/usstocklists/" class="btn btn-primary">米国銘柄一覧管理</a>
     <a href="/usstockdividends/" class="btn btn-primary">現金配当一覧管理</a>
   </div><br>
+@else
+  <div>
+    <a href="/usstockdividends/" class="btn btn-primary">現金配当一覧</a>
+  </div><br>
 @endif
 <form action="show">
   @csrf
