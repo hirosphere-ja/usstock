@@ -25,7 +25,9 @@
     <th style="width:20%" class="text-center">権利落日</th>
     <th style="width:20%" class="text-center">支払日</th>
     <th style="width:15%" class="text-center">配当内容</th>
-    <th style="width:15%"></th>
+    @if (Auth::check())
+      <th style="width:15%"></th>
+    @endif
   </tr>
   @foreach ($usstockdividends as $usstockdividend)
     <tr>
@@ -33,6 +35,7 @@
       <td class="text-center">{{ date('Y/m/d',strtotime($usstockdividend->exrights)) }}</td>
       <td class="text-center">{{ date('Y/m/d',strtotime($usstockdividend->paymentday)) }}</td>
       <td class="text-center">{{ money_format("%.6n",$usstockdividend->dividend) }} USD</td>
+      @if (Auth::check())
       <td>
         <a href="/usstockdividends/{{ $usstockdividend->id }}/edit" class="btn btn-primary d-inline-block">編集</a>
         <form action="/usstockdividends/{{$usstockdividend->id}}" method="post" class="d-inline-block">
@@ -41,6 +44,7 @@
           <input type="submit" value="削除" class="btn btn-danger btn-dell">
         </form>
       </td>
+    @endif
     </tr>
   @endforeach
 </table>

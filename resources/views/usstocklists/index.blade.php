@@ -14,7 +14,9 @@
       <th style="width:10%" class="text-center">ティッカー</th>
       <th style="width:63%" class="text-center">銘柄名</th>
       <th style="width:10%" class="text-center">市場</th>
-      <th style="width:15%" class="text-center"></th>
+      @if (Auth::check())
+        <th style="width:15%" class="text-center"></th>
+      @endif
     </tr>
   </thead>
   <tbody>
@@ -24,6 +26,7 @@
       <td class="text-center">{{ $usstocklist->stockname }}</td>
       <td class="text-center">{{ $usstocklist->usstockmarket->market }}</td>
       <td class="text-center">
+        @if (Auth::check())
         {{-- <a href="/usstocklists/{{ $usstocklist->ticker }}" class="btn btn-primary btn-sm d-inline-block">詳細</a> --}}
         <a href="/usstocklists/{{ $usstocklist->ticker }}/edit" class="btn btn-primary d-inline-block">編集</a>
         <form action="/usstocklists/{{$usstocklist->ticker}}" method="post" class="d-inline-block">
@@ -31,6 +34,7 @@
           <input type="hidden" name="_method" value="delete">
           <input type="submit" value="削除" class="btn btn-danger btn-dell">
         </form>
+        @endif
       </td>
     </tr>
     @endforeach
