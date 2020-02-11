@@ -28,7 +28,7 @@ class UsstockdividendsController extends Controller
      */
     public function create()
     {
-        $usstocklists = Usstocklist::orderBy('ticker','desc')->get();
+        $usstocklists = Usstocklist::orderBy('ticker','asc')->get();
         return view('usstockdividends.create', ['usstocklists' => $usstocklists]);
     }
 
