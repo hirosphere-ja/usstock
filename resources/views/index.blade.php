@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '米国株式配当')
+@section('title', '米国株式現金配当')
 
 @section('content')
 @if (Auth::check())
