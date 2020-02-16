@@ -20,13 +20,25 @@
 
     <title>@yield('title')</title>
 
-    <!-- Google Adsence -->
-    <script data-ad-client="ca-pub-2054344840815103" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   </head>
   <body>
     <div class="container">
+      <!-- Google Adsence -->
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- Advertisement -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-2054344840815103"
+          data-ad-slot="7763974605"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
       <h1>@yield('title')</h1>
       @yield('content')
+      <br>
+      <p style="color:red">当サイトの情報は正確に公開していますが、万が一、間違えていたとしても責任は追いませんので当サイトの使用に関しては自己責任でお願いいたします。</p>
     </div>
 
     <!-- Optional JavaScript -->
