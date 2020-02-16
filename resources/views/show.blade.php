@@ -48,7 +48,7 @@
     </tr>
   @endforeach
 </table>
-<a href="/" class="btn btn-success d-inline-block">TOPに戻る</a>
+<a href="/" class="btn btn-success d-inline-block">TOPに戻る</a><br>
 @endsection
 @section('script')
 <script>
