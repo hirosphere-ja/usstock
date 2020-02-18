@@ -45,7 +45,7 @@ class UsstocklistsController extends Controller
 
         $rules = [
             'ticker' => 'required|unique:usstocklists',
-            'stockname' => 'required|unique:usstocklists',
+            'stockname' => 'required',
         ];
 
         $messages = [
@@ -53,7 +53,6 @@ class UsstocklistsController extends Controller
             'ticker.unique' => 'ティッカーが重複しています。',
 
             'stockname.required' => '銘柄名を入力してください。',
-            'stockname.unique' => '銘柄名が重複しています。',
         ];
 
         $validator = Validator::make($requests,$rules,$messages);
