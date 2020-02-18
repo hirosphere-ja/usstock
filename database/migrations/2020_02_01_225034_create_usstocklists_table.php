@@ -15,7 +15,7 @@ class CreateUsstocklistsTable extends Migration
     {
         Schema::create('usstocklists', function (Blueprint $table) {
             $table->string('ticker')->unique()->primary();
-            $table->string('stockname')->unique();
+            $table->string('stockname');
             $table->integer('market_id');
         });
     }
