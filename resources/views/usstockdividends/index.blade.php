@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '現金配当一覧')
+@section('title', '高配当米国株一覧')
 
 @section('content')
 <div>
