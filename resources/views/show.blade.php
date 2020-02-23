@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '個別銘柄現金配当一覧 - '.strtoupper($ticker))
+@section('title', '個別銘柄詳細 - '.$usstocklist->stockname.'('.strtoupper($ticker).')')
 
 @section('content')
 <table class="table">
@@ -49,6 +49,11 @@
   @endforeach
 </table>
 <a href="/" class="btn btn-success d-inline-block">TOPに戻る</a><br>
+<style>
+  h1 {
+    font-size: 26px;
+  }
+</style>
 @endsection
 @section('script')
 <script>
