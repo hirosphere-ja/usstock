@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '米国株式現金配当')
+@section('title', '高配当米国株一覧')
 
 @section('content')
 @if (Auth::check())
@@ -11,7 +11,7 @@
   </div><br>
 @else
   <div>
-    <a href="/usstockdividends/" class="btn btn-primary">現金配当一覧</a>
+    <a href="/usstockdividends/" class="btn btn-primary">高配当米国株一覧</a>
   </div><br>
 @endif
 <form action="show">
