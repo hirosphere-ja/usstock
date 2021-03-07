@@ -6,8 +6,8 @@
 <table class="table">
   <thead>
     <tr>
-      <th class="text-center">銘柄名</th>
       <th class="text-center">ティッカー</th>
+      <th class="text-center">銘柄名</th>
       <th class="text-center">市場</th>
     </tr>
   </thead>
