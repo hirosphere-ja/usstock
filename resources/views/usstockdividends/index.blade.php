@@ -30,7 +30,7 @@
       <td class="text-center">{{ date('Y/m/d',strtotime($usstockdividend->paymentday)) }}</td>
       {{-- money_formatが非推奨になったので変更 --}}
       {{-- <td class="text-center">{{ money_format("%.6n",$usstockdividend->dividend) }} USD</td> --}}
-      <td class="text-center">{{ $usstockdividend->dividend }} USD</td>      @if (Auth::check())
+      <td class="text-center">{{ $usstockdividend->dividend }} USD</td>
       @if (Auth::check())
         <td class="text-center">
           {{-- <a href="/usstockdividends/{{ $usstockdividend->id }}" class="btn btn-primary btn-sm d-inline-block">詳細</a> --}}
